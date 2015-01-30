@@ -11,11 +11,11 @@ state_file = /var/awslogs/state/agent-state
 #
 ## Path of log file for the agent to monitor and upload.
 #
-#file = /var/log/kern.log
+file = /var/log/nginx/error.log
 #
 ## Name of the destination log group.
 #
-#log_group_name = kern.log
+log_group_name = nging-error.log
 #
 ## Name of the destination log stream.
 #
@@ -29,6 +29,7 @@ state_file = /var/awslogs/state/agent-state
 
 [<%= node[:opsworks][:stack][:name] %>]
 datetime_format = [%Y-%m-%d %H:%M:%S]
-log_group_name = <%= node[:opsworks][:stack][:name].gsub(' ','_') %>
-file = <%= node[:cwlogs][:logfile] %>
+
+#log_group_name = <%= node[:opsworks][:stack][:name].gsub(' ','_') %>
+#file = <%= node[:cwlogs][:logfile] %>
 log_stream_name = <%= node[:opsworks][:instance][:hostname] %>
