@@ -45,7 +45,7 @@ http {
   include <%= node[:nginx][:dir] %>/conf.d/*.conf;
   include <%= node[:nginx][:dir] %>/sites-enabled/*;
   
-  upstream unicorn_rails {
+  upstream cs2n {
     server 127.0.0.1:3000 fail_timeout=0;
   }
 }
