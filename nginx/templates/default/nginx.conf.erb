@@ -2,6 +2,10 @@ user <%= node[:nginx][:user] %>;
 worker_processes  <%= node[:nginx][:worker_processes] %>;
 worker_rlimit_nofile  <%= node[:nginx][:worker_rlimit_nofile] %>;
 
+# This is where we specify the socket.
+# We will point the upstream Nginx module to this socket later on
+listen "/srv/www/cs2n/shared/sockets/unicorn.sock", :backlog => 64 
+
 error_log  <%= node[:nginx][:log_dir] %>/error.log;
 pid        <%= node[:nginx][:pid_file] %>;
 
@@ -45,7 +49,7 @@ http {
   include <%= node[:nginx][:dir] %>/conf.d/*.conf;
   include <%= node[:nginx][:dir] %>/sites-enabled/*;
   
-  upstream cs2n {
+  upstream unicorn_rails {
     server 127.0.0.1:3000 fail_timeout=0;
   }
 }
