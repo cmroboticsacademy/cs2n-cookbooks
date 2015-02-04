@@ -4,7 +4,7 @@ worker_rlimit_nofile  <%= node[:nginx][:worker_rlimit_nofile] %>;
 
 # This is where we specify the socket.
 # We will point the upstream Nginx module to this socket later on
-listen "/srv/www/cs2n/shared/sockets/unicorn.sock", :backlog => 64 
+listen "/srv/www/cs2n/shared/sockets/unicorn.sock", :backlog => 2048 
 
 error_log  <%= node[:nginx][:log_dir] %>/error.log;
 pid        <%= node[:nginx][:pid_file] %>;
