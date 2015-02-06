@@ -7,4 +7,6 @@
 ###
 # The following shows how to override OpsWorks default TCP keepalive timeout:
 #
-normal[:opsworks_initial_setup][:sysctl]['fs.file-max'] = 120000
+#normal[:opsworks_initial_setup][:sysctl]['fs.file-max'] = 120000
+normal[:opsworks_initial_setup][:sysctl]['net.core.somaxconn'] = 2048
+#normal[:opsworks_initial_setup][:sysctl]['net.core.netdev_max_backlog'] = 2048
