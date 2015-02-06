@@ -33,8 +33,20 @@ file = /var/log/nginx/error.log*
 log_group_name = <%= node[:opsworks][:stack][:name].gsub(' ','_') %>-nginx.log 
 log_stream_name = <%= node[:opsworks][:instance][:hostname] %>-nginx.log
 
-[cs2n-access.log]
+[cs2n.access.log]
 datetime_format = [%Y-%m-%d %H:%M:%S] 
-file = /var/log/nginx/cs2n-access.log*
+file = /var/log/nginx/cs2n.access.log*
 log_group_name = <%= node[:opsworks][:stack][:name].gsub(' ','_') %>-access.log 
 log_stream_name = <%= node[:opsworks][:instance][:hostname] %>-access.log
+
+[access.log]
+datetime_format = [%Y-%m-%d %H:%M:%S] 
+file = /var/log/nginx/access.log*
+log_group_name = access.log 
+log_stream_name = access.log
+
+[localhost.access.log]
+datetime_format = [%Y-%m-%d %H:%M:%S] 
+file = /var/log/nginx/cs2n.access.log*
+log_group_name = localhost.access.log 
+log_stream_name = localhost.access.log
