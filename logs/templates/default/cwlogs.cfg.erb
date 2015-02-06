@@ -29,5 +29,5 @@ state_file = /var/awslogs/state/agent-state
 
 datetime_format = [%Y-%m-%d %H:%M:%S] 
 file = /var/log/nginx/error.log 
-log_group_name = <%= node[:opsworks][:stack][:name].gsub(' ','_')-NGINX %> 
+log_group_name = <%= node[:opsworks][:stack][:name].gsub(' ','_') %>-nginx.log 
 log_stream_name = <%= node[:opsworks][:instance][:hostname] %>
