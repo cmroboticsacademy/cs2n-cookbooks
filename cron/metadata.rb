@@ -1,0 +1,5 @@
+name        "sidekiq cron"
+description "Runs the cron job for sidekiq"
+maintainer  "Vu Nguyen"
+maintainer_email "vnguyen@nrec.ri.cmu.edu"
+version     "0.0.1"

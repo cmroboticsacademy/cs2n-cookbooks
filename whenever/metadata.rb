@@ -1,5 +1,0 @@
-name        "whenever command"
-description "Runs the whenever --update-crontab command upon startup"
-maintainer  "Vu Nguyen"
-maintainer_email "vnguyen@nrec.ri.cmu.edu"
-version     "0.0.1"
