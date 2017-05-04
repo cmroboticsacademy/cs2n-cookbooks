@@ -1,4 +1,4 @@
-cron "sidekiq" do
+cron "sidekiq_cronjob" do
   minute "*/1"
   command %Q{
     cd /srv/www/cs2n/current/ && 
