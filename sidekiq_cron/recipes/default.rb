@@ -1,7 +1,7 @@
 cron "sidekiq_cronjob" do
-  minute "*/1"
+  minute "*/5"
   command %Q{
     cd /srv/www/cs2n/current/ && 
-    sudo RAILS_ENV=#{node["deploy"]["cs2n"]["rails_env"]} bundle exec rake job_processess:test
+    sudo bundle exec rake job_processess:test
   }
 end
