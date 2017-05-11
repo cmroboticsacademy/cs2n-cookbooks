@@ -15,7 +15,7 @@ default_opts = {
 }
 
 execute 'start_sidekiq' do
-  command "bundle exec sidekiq"
+  command "sudo bundle exec sidekiq"
   cwd "#{node[:deploy]['cs2n'][:deploy_to]}/current/"
 end
  
