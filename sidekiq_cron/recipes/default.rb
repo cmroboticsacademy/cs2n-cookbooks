@@ -15,8 +15,8 @@ default_opts = {
 }
 
 execute 'start_sidekiq' do
-  command "sudo bundle exec sidekiq"
   cwd "#{node[:deploy]['cs2n'][:deploy_to]}/current/"
+  command "sudo bundle exec sidekiq"
 end
  
 cron_rake_script "job_processess:test", {
