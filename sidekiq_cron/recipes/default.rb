@@ -13,10 +13,6 @@ default_opts = {
   :user => node[:deploy]['cs2n'][:user],
   :group => node[:deploy]['cs2n'][:group]
 }
-
-execute 'start_sidekiq' do
-  command "cd /srv/www/cs2n/current/ && sudo bundle exec sidekiq"
-end
  
 cron_rake_script "job_processess:test", {
   :minute => "*/5"
