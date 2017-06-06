@@ -1,8 +1,5 @@
-script 'Run Test Newsletter' do
-  interpreter "ruby"
+execute 'rake ' do
+  command "sudo bundle exec rake job_processess:summer_of_learning_email[test]"
   cwd node[:deploy]['cs2n'][:deploy_to]
-  code <<-EOH
-    sudo RAILS_ENV=#{node[:deploy]['cs2n']["rails_env"]} bundle exec rails console
-    WannaShareEmailsWorker.perform_async(:summer_of_learning,:test)
-  EOH
+  environment 'RAILS_ENV' => node['deploy']['cs2n']['rails_env']
 end
