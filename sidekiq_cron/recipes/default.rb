@@ -17,10 +17,3 @@ default_opts = {
 #cron_rake_script "job_processess:test", {
 #  :minute => "*/5"
 #}.merge(default_opts)
-
-cron_rake_script "job_processess:summer_of_learning_email[test]", {
-  :month => "6"
-  :weekday => "2"
-  :hour '16'
-  :minute => "40"
-}.merge(default_opts)
